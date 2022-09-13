@@ -1,0 +1,39 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #E1E5EA;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+footer {
+    height:40px; 
+    width: 100%; 
+    background-attachment: scroll;
+    background-color: #D2DAFF;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+    position: absolute,
+}  
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    margin-left: 30px;
+    color: #748DA6;   
+}
+
+.container-fluid{
+    margin-top: 5%;
+}
+
+.card-title{margin-left: 40%;}
+.img-card{margin-left: 23%;}
+
+.card-title-l{margin-left: 40%;}
+.img-card-l{margin-left: 23%;}
