@@ -19,10 +19,16 @@ footer {
     position: absolute,
 }  
 
-a{
+a {
+    color: black;
     text-decoration: none;
 }
-
+.list-group-item>a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
 h1{
     margin-left: 30px;
     color: #748DA6;   
@@ -32,8 +38,31 @@ h1{
     margin-top: 5%;
 }
 
-.card-title{margin-left: 40%;}
-.img-card{margin-left: 23%;}
+.card-title{
+    margin-left: 40%;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #6C63FF;
+}
 
-.card-title-l{margin-left: 40%;}
-.img-card-l{margin-left: 23%;}
+.card-title :hover{
+    text-decoration: none;
+}
+
+.img-card{
+    margin-left: 23%;
+}
+
+.content{
+    width: 50%;
+    margin: auto;
+    padding: 3%;
+}
+
+h5{
+    margin-right: 15px;
+}
+
+h2:hover{
+    text-decoration: none;
+}

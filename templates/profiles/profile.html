@@ -1,9 +1,56 @@
-<title>{{ profile.user.username }}</title>
-<h1>{{ profile.user.username }}</h1>
-<p>First name: {{ profile.user.first_name }}</p>
-<p>Last name: {{ profile.user.last_name }}</p>
-<p>Email: {{ profile.user.email }}</p>
-<p>Favorite city: {{ profile.favorite_city }}</p>
-<div><a href="{% url 'profiles_index' %}">Back</a></div>
-<div><a href="{% url 'index' %}">Home</a></div>
-<div><a href="{% url 'lettings_index' %}">Lettings</a></div>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}<title>{{ profile.user.username }}</title>{% endblock title %}
+
+{% block content %}
+
+<div class="d-flex mx-4">
+    <div>
+        <img src="{% static 'img/professional_card.svg' %}" alt="" width="120" height="120">
+    </div>
+    <div>
+        <h1 class="display-5 mt-4">{{ profile.user.username }}</h1>
+    </div> 
+</div>
+<hr>
+
+<div class="content">
+    <div class="card border-success mb-3">
+        <div class="card-body">
+          <h5 class="card-title text-success mb-4">Info Profile</h5>
+            <hr>
+          <div class="d-flex">
+            <h5>First name:</h5>
+            <p>{{ profile.user.first_name }}</p>
+          </div>
+          <div class="d-flex">
+            <h5>Last name:</h5>
+            <p>{{ profile.user.last_name }}</p>
+          </div>
+          <div class="d-flex">
+            <h5>Email:</h5>
+            <p>{{ profile.user.email }}</p>
+          </div>
+          <div class="d-flex">
+            <h5>Favorite city:</h5>
+            <p>{{ profile.favorite_city }}</p>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="row justify-content-evenly mt-4">
+    <div class="col-1">
+        <a href="{% url 'profiles_index' %}" class="btn btn-primary"><img src="{% static 'img/arrow-left.svg' %}" alt="">  Back</a>
+    </div>
+    <div class="col-1">
+        <a href="{% url 'index' %}" class="btn btn-primary"><img src="{% static 'img/home.svg' %}" alt="">   Home</a>
+        
+    </div>
+    <div class="col-1">
+        <a href="{% url 'lettings_index' %}" class="btn btn-primary"><img src="{% static 'img/key.svg' %}" alt="">  Lettings</a>
+    </div>
+</div>
+
+{% endblock content %}

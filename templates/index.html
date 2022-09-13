@@ -20,7 +20,7 @@
 
     <div class="row justify-content-around mt-4">
     
-        <div class="col-5 card">
+        <div class="col-5 card border-light">
             <a class="bbtn btn-outline-light" href="{% url 'profiles_index' %}" role="button">
         
                 <img src="{% static 'img/profile_data.svg' %}" alt="" width="370" height="370" class="img-card">
@@ -29,7 +29,7 @@
             </a>
         </div>
 
-        <div class="col-5 card">
+        <div class="col-5 card border-light">
             <a class="bbtn btn-outline-light" href="{% url 'lettings_index' %}" role="button">
         
                 <img src="{% static 'img/house_searching.svg' %}" alt="" width="370" height="370" class="img-card">
@@ -39,6 +39,5 @@
         </div>
 
     </div>
-
 
 {% endblock content %}

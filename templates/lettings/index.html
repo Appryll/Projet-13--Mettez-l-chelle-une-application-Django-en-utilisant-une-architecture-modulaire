@@ -5,31 +5,41 @@
 
 {% block content %}
 
-<h1>Lettings</h1>
+<div class="d-flex mx-4">
+    <div>
+        <img src="{% static 'img/best_place.svg' %}" alt="" width="150" height="120">
+    </div>
+    <div>
+        <h1 class="display-4 mt-3">Lettings</h1>
+    </div> 
+</div>
 <hr>
 
-{% if lettings_list %}
-    <ul>
+<div class="content">
+
+    {% if lettings_list %}
+        <ul class="list-group">
     {% for letting in lettings_list %}
-        <li>
-            <a href="{% url 'letting' letting_id=letting.id %}">
+        <li class="list-group-item list-group-item-light">
+            <a href="{% url 'letting' letting_id=letting.id %}" class="list-group-item list-group-item-action list-group-item-info">
                 {{ letting.title }}
             </a>
         </li>
     {% endfor %}
-    </ul>
-{% else %}
-    <p>No lettings are available.</p>
-{% endif %}
+        </ul>
+    {% else %}
+        <p>No lettings are available.</p>
+    {% endif %}  
 
+</div>
 
 <div class="row justify-content-evenly mt-4">
     <div class="col-1">
-        <a href="{% url 'index' %}" class="btn btn-primary"><img src="{% static 'img/home.svg' %}" alt="">  Home</a>
+        <a href="{% url 'index' %}" class="btn btn-primary"><img src="{% static 'img/home.svg' %}" alt="">   Home</a>
         
     </div>
     <div class="col-1">
-        <a href="{% url 'profiles_index' %}" class="btn btn-primary">Profiles</a>
+        <a href="{% url 'profiles_index' %}" class="btn btn-primary"><img src="{% static 'img/user.svg' %}" alt="">  Profiles</a>
     </div>
 </div>
 
