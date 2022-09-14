@@ -19,6 +19,10 @@ footer {
     position: absolute,
 }  
 
+.titre{ 
+    background-color: lavender;
+}
+
 a {
     color: black;
     text-decoration: none;
