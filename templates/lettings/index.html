@@ -20,7 +20,8 @@
     {% if lettings_list %}
         <ul class="list-group">
     {% for letting in lettings_list %}
-        <li class="list-group-item list-group-item-light">
+        <li class="list-group-item list-group-item-light d-flex">
+            <img src="{% static 'img/sweet_home.svg' %}" alt="" width="70" height="55">
             <a href="{% url 'letting' letting_id=letting.id %}" class="list-group-item list-group-item-action list-group-item-info">
                 {{ letting.title }}
             </a>

@@ -21,6 +21,7 @@
         <ul class="list-group list-group-flush">
     {% for profile in profiles_list %}
         <li class="list-group-item">
+            <img src="{% static 'img/avatar.svg' %}" alt="" width="50" height="50">
             <a href="{% url 'profile' username=profile.user.username %}">
                 {{ profile.user.username }}
             </a>
