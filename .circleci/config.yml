@@ -34,6 +34,11 @@ jobs:
           command: |
             python -m venv venv
       - run:
+          name: upgrade pip
+          command: | 
+            source venv/bin/activate
+            pip install --upgrade pip
+      - run:
           name: install required packages
           command: |
             .\venv\Scripts\activate
