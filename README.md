@@ -1,7 +1,10 @@
-## Résumé
+# Résumé
 
-Site web d'Orange County Lettings
+## Site web d'Orange County Lettings:
 
+<img src="static/img/page.png" width="600" height="300">
+
+---------------------------------------------------------------
 ## Développement local
 
 ### Prérequis
@@ -75,3 +78,16 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+-------------------------------------------------------------------
+
+## Développement local depuis DockerHub
+
+- Installer [Docker Desktop](https://www.docker.com/products/docker-desktop/) sur votre machine 
+- Créer un compte [Docker Hub](https://hub.docker.com/)
+
+- Pour charger l'image localement, dans votre console, éxecuter: `docker run -p 8000:8000 appryll/python-oc-lettings-fr-web:lastet`
+
+- Aller sur l'adresse `http://127.0.0.1:8000/`
+
+--------------------------------------------------------------------
