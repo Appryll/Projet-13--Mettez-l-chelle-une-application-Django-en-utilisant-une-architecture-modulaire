@@ -36,17 +36,17 @@ jobs:
       - run:
           name: install required packages
           command: |
-            . venv/scripts/activate
+            . venv\Scripts\activate.bat
             pip install -r requirements.txt
       - run:
           name: pytest
           command: |
-            . venv/scripts/activate
+            . venv\Scripts\activate.bat
             pytest
       - run:
           name: flake8
           command: |
-            . venv/scripts/activate
+            . venv\Scripts\activate.bat
             flake8
  
 # Invoke jobs via workflows
