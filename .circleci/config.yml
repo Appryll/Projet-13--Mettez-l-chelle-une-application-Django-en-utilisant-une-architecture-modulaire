@@ -36,17 +36,17 @@ jobs:
       - run:
           name: install required packages
           command: |
-            . activate.bat
+            . \activate.bat
             pip install -r requirements.txt
       - run:
           name: pytest
           command: |
-            . activate.bat
+            . \activate.bat
             pytest
       - run:
           name: flake8
           command: |
-            . activate.bat
+            . \activate.bat
             flake8
  
 # Invoke jobs via workflows
