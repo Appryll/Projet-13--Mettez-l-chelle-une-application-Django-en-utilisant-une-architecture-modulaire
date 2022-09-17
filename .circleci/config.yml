@@ -36,22 +36,22 @@ jobs:
       - run:
           name: upgrade pip
           command: | 
-            ./venv/scripts/activate
+            .\venv\scripts\activate
             python -m pip install --upgrade pip
       - run:
           name: install required packages
           command: |
-            ./venv/scripts/activate
+            .\venv\scripts\activate
             pip install -r requirements.txt
       - run:
           name: pytest
           command: |
-            ./venv/scripts/activate
+            .\venv\scripts\activate
             pytest
       - run:
           name: flake8
           command: |
-            ./venv/scripts/activate
+            .\venv\scripts\activate
             flake8
 
 # Invoke jobs via workflows
