@@ -7,6 +7,6 @@ class TestHome(TestCase):
         url = reverse('index')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'<title>Holiday Homes</title>', response.content)
+        self.assertIn(b'<title>Holiday Homesssssssssssssssssssssd</title>', response.content)
         # assert response.status_code == 200
         # assert b"<title>Holiday Homes</title>" in response.content
