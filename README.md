@@ -86,7 +86,7 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 - Installer [Docker Desktop](https://www.docker.com/products/docker-desktop/) sur votre machine 
 - Créer un compte [Docker Hub](https://hub.docker.com/)
 
-- Pour charger l'image localement, dans votre console, éxecuter: `docker run -p 8000:8000 appryll/python-oc-lettings-fr-web:lastet`
+- Pour charger l'image localement, dans votre console, éxecuter: `docker run -p 8000:8000 appryll/oc-lettings-site`
 
 - Aller sur l'adresse `http://127.0.0.1:8000/`
 
