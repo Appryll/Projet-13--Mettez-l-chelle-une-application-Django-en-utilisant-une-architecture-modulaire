@@ -1,0 +1,72 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #E1E5EA;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+footer {
+    height:40px; 
+    width: 100%; 
+    background-attachment: scroll;
+    background-color: #D2DAFF;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+    position: absolute,
+}  
+
+.titre{ 
+    background-color: lavender;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+.list-group-item>a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+h1{
+    margin-left: 30px;
+    color: #748DA6;   
+}
+
+.container-fluid{
+    margin-top: 5%;
+}
+
+.card-title{
+    margin-left: 40%;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #6C63FF;
+}
+
+.card-title :hover{
+    text-decoration: none;
+}
+
+.img-card{
+    margin-left: 23%;
+}
+
+.content{
+    width: 50%;
+    margin: auto;
+    padding: 3%;
+}
+
+h5{
+    margin-right: 15px;
+}
+
+h2:hover{
+    text-decoration: none;
+}
