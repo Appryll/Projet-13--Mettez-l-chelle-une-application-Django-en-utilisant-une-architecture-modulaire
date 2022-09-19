@@ -42,7 +42,7 @@ jobs:
       - run: |
           echo "$DOCKERHUB_PASSWORD" | docker login --username $DOCKERHUB_USERNAME --password-stdin
       - run: docker build -t $DOCKERHUB_USERNAME/$IMAGE_NAME:$CIRCLE_BRANCH .
-      - run: docker tag $IMAGE_NAME:$CIRCLE_BRANCH $DOCKERHUB_USERNAME/oc-lettings-site:$CIRCLE_BRANCH
+      - run: docker tag $IMAGE_NAME:$CIRCLE_BRANCH $DOCKERHUB_USERNAME/$IMAGE_NAME:$CIRCLE_BRANCH
       - run: docker push $DOCKERHUB_USERNAME/$IMAGE_NAME:$CIRCLE_BRANCH
 
 workflows:
