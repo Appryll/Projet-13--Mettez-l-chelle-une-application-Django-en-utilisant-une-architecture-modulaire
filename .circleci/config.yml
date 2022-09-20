@@ -59,12 +59,11 @@ workflows:
                   branches:
                     only:
                       - master
-    heroku_deploy:
-      jobs:
-          - heroku/deploy-via-git:
-              requires:
-              - conteneurisation
-              filters:
-                branches:
-                    only: 
-                      - master
+    
+            - heroku/deploy-via-git:
+                requires:
+                - conteneurisation
+                filters:
+                  branches:
+                      only: 
+                        - master
