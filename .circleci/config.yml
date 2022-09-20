@@ -45,6 +45,9 @@ jobs:
       - run: docker tag $IMAGE_NAME:$CIRCLE_SHA1 $DOCKERHUB_USERNAME/$IMAGE_NAME:$CIRCLE_SHA1
       - run: docker push $DOCKERHUB_USERNAME/$IMAGE_NAME:$CIRCLE_SHA1
 
+orbs:
+  heroku: circleci/heroku@1.2.6
+
 workflows:
     sample:
         jobs:
@@ -55,4 +58,13 @@ workflows:
                 filters:
                   branches:
                     only:
+                      - master
+    heroku_deploy:
+      jobs:
+          - heroku/deploy-via-git:
+              requires:
+              - conteneurisation
+              filters:
+                branches:
+                    only: 
                       - master
