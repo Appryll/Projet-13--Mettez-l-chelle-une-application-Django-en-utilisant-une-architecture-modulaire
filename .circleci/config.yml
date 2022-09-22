@@ -45,8 +45,17 @@ jobs:
       - run: docker tag $IMAGE_NAME:$CIRCLE_SHA1 $DOCKERHUB_USERNAME/$IMAGE_NAME:$CIRCLE_SHA1
       - run: docker push $DOCKERHUB_USERNAME/$IMAGE_NAME:$CIRCLE_SHA1
 
-orbs:
-  heroku: circleci/heroku@1.2.6
+  deploy:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Build and push Docker image to Heroku
+          command: |
+            sudo curl https://cli-assets.heroku.com/install.sh | sh
+            HEROKU_API_KEY=$HEROKU_API_KEY heroku container:login
+            HEROKU_API_KEY=$HEROKU_API_KEY heroku container:push -a $HEROKU_APP_NAME web
+            HEROKU_API_KEY=$HEROKU_API_KEY heroku container:release -a $HEROKU_APP_NAME web
 
 workflows:
     sample:
@@ -60,7 +69,7 @@ workflows:
                     only:
                       - master
     
-            - heroku/deploy-via-git:
+            - deploy:
                 requires:
                 - conteneurisation
                 filters:
