@@ -9,6 +9,8 @@ class TestLettings(TestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'<title>Lettings</title>', response.content)
+        # assert response.status_code == 200
+        # assert b"<title>Lettings</title>" in response.content
 
     def setUp(self):
         self.address = Address.objects.create(
@@ -29,3 +31,5 @@ class TestLettings(TestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'<title>Test Lettings</title>', response.content)
+        # assert response.status_code == 200
+        # assert b"<title>Test Lettings</title>" in response.content

@@ -10,6 +10,8 @@ class TestProfile(TestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'<title>Profiles</title>', response.content)
+        # assert response.status_code == 200
+        # assert b"<title>Lettings</title>" in response.content
 
     def setUp(self):
         self.user = User.objects.create(
@@ -35,3 +37,5 @@ class TestProfile(TestCase):
         self.assertIn(b'<p>contact@contact.com</p>', response.content)
         self.assertIn(b'<h5>Favorite city:</h5>', response.content)
         self.assertIn(b'<p>Paris</p>', response.content)
+        # assert response.status_code == 200
+        # assert b"<title>Test Lettings</title>" in response.content
