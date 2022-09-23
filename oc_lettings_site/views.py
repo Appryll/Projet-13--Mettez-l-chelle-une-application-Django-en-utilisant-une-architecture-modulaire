@@ -6,7 +6,7 @@ from django.shortcuts import render
 # convallis eros,vitae dapibus nisi lorem dapibus sem. Maecenas pharetra purus ipsum, eget
 # consequat ipsum lobortis quis. Phasellus eleifend ex auctor venenatis tempus.
 # Aliquam vitae erat ac orci placerat luctus. Nullam elementum urna nisi, pellentesque iaculis
-# enim cursus in. Praesent volutpat porttitor magna, non finibus neque cursus id.
+# enim cursus in. Praesent volutpat porttitor magna, non finibus neque cursus id.ghhhg
 
 
 def index(request):
