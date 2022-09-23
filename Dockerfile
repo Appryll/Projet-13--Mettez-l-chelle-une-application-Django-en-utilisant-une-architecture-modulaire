@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # base image -> img linux light
-FROM python:3.8-slim-buster 
+FROM python:3.8
 
 # ~python -B
 ENV PYTHONDONTWRITEBYTECODE=1
