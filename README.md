@@ -6,7 +6,15 @@
 
 # Résumé
 
-## Développement local
+## Index
+1. [Développement local](#local)
+2. [Développement local depuis DockerHub](#dockerhub)
+3. [Créer une imagen Docker](#docker)
+4. [Sentry](#sentry)
+5. [Définissez vos propres variables d'environnement](#environnement)
+6. [Déploiement sur Heroku](#heroku)
+
+# Développement local<a name="local"></a>
 
 ### Prérequis
 
@@ -81,12 +89,11 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
 
 -------------------------------------------------------------------
-
-## Développement local depuis DockerHub
+# Développement local depuis DockerHub<a name="dockerhub"></a>
 
 - Installer [Docker Desktop](https://www.docker.com/products/docker-desktop/) sur votre machine 
 - Créer un compte [Docker Hub](https://hub.docker.com/)
-- Pour charger l'image localement, dans la console, éxecuter: `docker run -p 8000:8000 appryll/oc-lettings-site`
+- Pour charger l'image localement, dans la console, éxecuter: `docker run -p 8000:8000 appryll/oc-lettings-site:<tag>`
 - Aller sur l'adresse `http://127.0.0.1:8000/`
 
 > #### Recuperer l'image souhaite : 
@@ -96,7 +103,7 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 - Pour telecharger une image, dans la console, éxecuter: `docker pull <DOCKERHUB_USERNAME>/<IMAGE_NAME>:<tag>` . Ex : `docker pull appryll/oc-lettings-site:907d8aab31da99f105773a26c34e072d0c44b9eb`
 -------------------------------------------------------------------
 
-## Créer une imagen Docker
+# Créer une imagen Docker<a name="docker"></a>
 
 - Installer [Docker Desktop](https://www.docker.com/products/docker-desktop/) sur votre machine 
 - Créer un compte [Docker Hub](https://hub.docker.com/)
@@ -112,7 +119,7 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 -------------------------------------------------------------------
 
-## Sentry
+## Sentry<a name="sentry"></a>
 
 - Créer un compte [Sentry](https://sentry.io/signup/)
 - Se connecter à votre compte
@@ -123,7 +130,7 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 -------------------------------------------------------------------
 
-## Définissez vos propres variables d'environnement
+# Définissez vos propres variables d'environnement<a name="environnement"></a>
 
 Pour ce faire, créer un fichier `.env` et définir votre valeur de SECRET_KEY, de DEBUG et de DSN_SENTRY. Utiliser le fichier `.env.example` comme exemple (si vous le souhaitez, vous pouvez le compléter et le renommer en `.env`)
 
@@ -134,7 +141,7 @@ Pour ce faire, créer un fichier `.env` et définir votre valeur de SECRET_KEY, 
 
 --------------------------------------------------------------------
 
-## Déploiement sur Heroku
+# Déploiement sur Heroku<a name="heroku"></a>
 
 Dans le cadre de l'intégration continue, le déploiement sur Heroku se fait automatiquement sur Circleci depuis une image docker via Github lors d'un push sur la branch master. À cette fin, certaines configurations sont nécessaires:
 
@@ -165,5 +172,5 @@ Dans le cadre de l'intégration continue, le déploiement sur Heroku se fait aut
   
   > HEROKU_API_KEY :  Vous pouvez afficher votre clé API Heroku en allant sur Account settings> API Key> Reveal
 
-### L'execution du pipeline est déclenchée automatiquement via Github lors d'un push sur la branch master, donc il vous reste simplement faire un commit
+### L'execution du pipeline est déclenchée automatiquement via Github lors d'un push sur la branch master, donc il vous reste simplement faire un commit.
  
