@@ -126,7 +126,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Sentry
 sentry_sdk.init(
-    dsn="https://2994fa7b745d4ff5b1b795b2ed251a36@o1382524.ingest.sentry.io/6771132",
+
+    dsn=config('DSN_SENTRY'),
     integrations=[
         DjangoIntegration(),
     ],

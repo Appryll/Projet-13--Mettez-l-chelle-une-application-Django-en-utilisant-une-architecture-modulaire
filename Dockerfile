@@ -1,12 +1,14 @@
 # syntax=docker/dockerfile:1
 
-# base image -> img linux light
+# base image
 FROM python:3.8
 
 # ~python -B
 ENV PYTHONDONTWRITEBYTECODE=1
 # log in console ~ python -u
 ENV PYTHONUNBUFFERED=1
+
+ENV PORT 8000
 
 # set work directory
 WORKDIR /code
