@@ -170,6 +170,7 @@ Dans le cadre de l'intégration continue, le déploiement sur Heroku se fait aut
       > HEROKU_API_KEY
       > HEROKU_APP_NAME
       > IMAGE_NAME
+      > DSN_SENTRY
   
   > HEROKU_API_KEY :  Vous pouvez afficher votre clé API Heroku en allant sur Account settings> API Key> Reveal
 
