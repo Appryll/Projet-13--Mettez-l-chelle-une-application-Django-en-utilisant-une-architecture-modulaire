@@ -172,5 +172,5 @@ Dans le cadre de l'intégration continue, le déploiement sur Heroku se fait aut
   
   > HEROKU_API_KEY :  Vous pouvez afficher votre clé API Heroku en allant sur Account settings> API Key> Reveal
 
-### L'execution du pipeline est déclenchée automatiquement via Github lors d'un push sur la branch master, donc il vous reste simplement faire un commit.
+### L'execution du pipeline est déclenchée automatiquement via Github lors d'un push sur la branch master, donc il vous reste simplement faire un commit
  
