@@ -5,16 +5,6 @@
 </div>
 
 # Résumé
-## Index
-1. [Développement local](#d-veloppement-local)
-2. [Développement local depuis DockerHub](#d-veloppement-local-depuis-dockerhub)
-3. [Créer une imagen Docker](#cr-er-une-imagen-docker)
-4. [Sentry](#sentry)
-5. [Définissez vos propres variables d'environnement](#d-finissez-vos-propres-variables-d-environnement)
-6. [Déploiement sur Heroku](#d-ploiement-sur-heroku)
-
-
----------------------------------------------------------------
 
 ## Développement local
 
@@ -113,6 +103,7 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 - Dans le terminal, au racine du projet, éxecuter: `docker build -t <IMAGE_NAME> .` avec le nom d'image souhaité. _ATTENTION!! : n'oubliez pas le point (.) -> indique le dossier de reference_
 - Utiliser la commande `docker images -a` afin de vérifier que l'image a été créée correctement
 - Pour lancer  le conteneur, taper la commande `docker run <IMAGE_NAME>` 
+- Aller sur l'adresse `http://127.0.0.1:8000/`
 - Pour arrêter le conteneur:
   - Tout d'abord il faut connaître l'ID du conteneur. Pour cela taper `docker ps` afin d'obtenir la liste des conteneurs
   - Copie l'ID
