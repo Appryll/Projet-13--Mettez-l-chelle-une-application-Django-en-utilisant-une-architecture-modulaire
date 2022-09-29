@@ -1,4 +1,6 @@
-## Site web d'Orange County Lettings:
+## Site web d'Orange County Lettings
+
+### https://oc-lettings-by-appryll.herokuapp.com/
 
 <div style="text-align:center">
   <img src="static/img/page.png" width="600" height="300">
@@ -93,14 +95,15 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Installer [Docker Desktop](https://www.docker.com/products/docker-desktop/) sur votre machine 
 - Créer un compte [Docker Hub](https://hub.docker.com/)
-- Pour charger l'image localement, dans la console, éxecuter: `docker run -p 8000:8000 appryll/oc-lettings-site:<tag>`
-- Aller sur l'adresse `http://127.0.0.1:8000/`
+- Pour telecharger une image, dans la console, éxecuter: `docker pull <DOCKERHUB_USERNAME>/<IMAGE_NAME>:<tag>` . Ex : `docker pull appryll/oc-lettings-site:57107f59bf2fa986c3aa7208ad53f1a6bae4a64a`
 
 > #### Recuperer l'image souhaite : 
->C'est posible de récupérer l'image souhaité en copiant le nom de l'image et le tag associé. Ex : 'oc-lettings-site:663ef4f3666cf2f403fa246b308e43980cb7d6a3'
+>C'est posible de récupérer l'image souhaité en copiant le nom de l'image et le tag associé. Ex : 'oc-lettings-site:57107f59bf2fa986c3aa7208ad53f1a6bae4a64a'
 >Pour obtenir la liste des tags et utiliser le tag souhaité simplement sur votre dockerHub lancez la recherche suivante : 'appryll/oc-lettings-site' (username DockerHub/repository name). 
 
-- Pour telecharger une image, dans la console, éxecuter: `docker pull <DOCKERHUB_USERNAME>/<IMAGE_NAME>:<tag>` . Ex : `docker pull appryll/oc-lettings-site:907d8aab31da99f105773a26c34e072d0c44b9eb`
+- Pour charger l'image localement, dans la console, éxecuter: `docker run -p 8000:8000 --env-file .env appryll/oc-lettings-site:<tag>` Ex : `docker run -p 8000:8000 --env-file .env appryll/oc-lettings-site:57107f59bf2fa986c3aa7208ad53f1a6bae4a64a`
+- Aller sur l'adresse `http://127.0.0.1:8000/`
+
 -------------------------------------------------------------------
 
 # Créer une imagen Docker<a name="docker"></a>
@@ -109,7 +112,7 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 - Créer un compte [Docker Hub](https://hub.docker.com/)
 - Dans le terminal, au racine du projet, éxecuter: `docker build -t <IMAGE_NAME> .` avec le nom d'image souhaité. _ATTENTION!! : n'oubliez pas le point (.) -> indique le dossier de reference_
 - Utiliser la commande `docker images -a` afin de vérifier que l'image a été créée correctement
-- Pour lancer  le conteneur, taper la commande `docker run <IMAGE_NAME>` 
+- Pour créer et lancer l'ensemble des conteneurs, taper la commande `docker-compose up` 
 - Aller sur l'adresse `http://127.0.0.1:8000/`
 - Pour arrêter le conteneur:
   - Tout d'abord il faut connaître l'ID du conteneur. Pour cela taper `docker ps` afin d'obtenir la liste des conteneurs
@@ -145,6 +148,11 @@ Pour ce faire, créer un fichier `.env` et définir votre valeur de SECRET_KEY, 
 
 Dans le cadre de l'intégration continue, le déploiement sur Heroku se fait automatiquement sur Circleci depuis une image docker via Github lors d'un push sur la branch master. À cette fin, certaines configurations sont nécessaires:
 
+### - Configuration sur DockerHub
+- Créer un repository < REPOSITORY_DOCKER >
+
+> ##### Plus d'info: [Docs Docker: Docker Hub > Quickstart > Create your first repository)](https://docs.docker.com/docker-hub/#step-2-create-your-first-repository)
+
 ### - Configuration sur Heroku
 
 - Créer un compte [Heroku](https://signup.heroku.com/)
@@ -153,7 +161,12 @@ Dans le cadre de l'intégration continue, le déploiement sur Heroku se fait aut
         
         ou 
 
-    - via Heroku web en accédant à Dashboard > New > Create new app
+    - via Heroku web en accédant à Dashboard > New > Create new app 
+      > ##### !! Attention : choisir comme région -> United States
+
+- Définir la variable DSN_SENTRY: En accédant à [apps] > Settings > Config Vars > Reveals Config Vars
+> ##### Plus d'info: [Docs Heroku: Heroku Architecture > Configuration and Config Vars > Using the Heroku Dashboard)](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard)
+
 
 ### - Configuration sur Circleci
 
