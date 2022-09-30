@@ -149,7 +149,9 @@ Pour ce faire, créer un fichier `.env` et définir votre valeur de SECRET_KEY, 
 Dans le cadre de l'intégration continue, le déploiement sur Heroku se fait automatiquement sur Circleci depuis une image docker via Github lors d'un push sur la branch master. À cette fin, certaines configurations sont nécessaires:
 
 ### - Configuration sur DockerHub
-- Créer un repository < REPOSITORY_DOCKER >
+- Créer un compte [Docker Hub](https://hub.docker.com/), si besoin
+- Se connecter
+- Créer un repository en accédant à 'Create repository' et en remplissant le nom < REPOSITORY_DOCKER > (Si nécessaire ajouter une description)
 
 > ##### Plus d'info: [Docs Docker: Docker Hub > Quickstart > Create your first repository)](https://docs.docker.com/docker-hub/#step-2-create-your-first-repository)
 
@@ -157,7 +159,8 @@ Dans le cadre de l'intégration continue, le déploiement sur Heroku se fait aut
 
 - Créer un compte [Heroku](https://signup.heroku.com/)
 - Créer une nouvelle application vide sur Heroku:
-    - via la commande `heroku create <HEROKU_APP_NAME>` sur votre terminal
+    - via la commande `heroku create <HEROKU_APP_NAME>` sur votre terminal 
+      > ##### **!!** connexion précédente via la commande `heroku login` **!!**
         
         ou 
 
